@@ -135,5 +135,46 @@ namespace SinglyLinkedList
 
             count--;
         }
+
+        // добавленные методы
+        public Node FindByIndex(int index)
+        {
+            if (index < 0 || index >= count)
+                return null;
+            int cur = 0;
+            Node node = Head;
+            while (cur != index)
+            {
+                node = node.Next;
+                cur++;
+            }
+
+            return node;
+        }
+
+        public Node FindLast(int key)
+        {
+            Node node = Head;
+            Node result = null;
+            while (node != null)
+            {
+                if (node.Value == key)
+                {
+                    result = node;
+                }
+
+                node = node.Next;
+            }
+
+            return result;
+        }
+        
+        public void PushBackRange(int[] array)
+        {
+            foreach (var item in array)
+            {
+                PushBack(item);
+            }
+        }
     }
 }
