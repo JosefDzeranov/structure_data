@@ -136,6 +136,31 @@ namespace SinglyLinkedList
             count--;
         }
 
+        public void RemoveNode(Node node)
+        {
+            if (Head == node)
+            {
+                Head = node.Next;
+            }
+            else
+            {
+                Node current = Head;
+                while (current.Next != null)
+                {
+                    if (current.Next == node)
+                    {
+                        break;
+                    }
+
+                    current = current.Next;
+                }
+
+                current.Next = node.Next;
+            }
+
+            count--;
+        }
+
         // добавленные методы
         public Node FindByIndex(int index)
         {
@@ -168,13 +193,40 @@ namespace SinglyLinkedList
 
             return result;
         }
-        
+
         public void PushBackRange(int[] array)
         {
             foreach (var item in array)
             {
                 PushBack(item);
             }
+        }
+
+
+        public void AddBefore(Node node, int item)
+        {
+            count++;
+            Node newNode = new Node(item);
+            newNode.Next = node;
+
+            if (node == Head)
+            {
+                Head = newNode;
+                return;
+            }
+
+            Node current = Head;
+            while (current.Next.Next != null)
+            {
+                if (current.Next == node)
+                {
+                    break;
+                }
+
+                current = current.Next;
+            }
+
+            current.Next = newNode;
         }
     }
 }
