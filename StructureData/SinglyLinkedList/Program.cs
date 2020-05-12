@@ -131,6 +131,29 @@ namespace SinglyLinkedList
             //     throw new Exception("Метод \"Remove\" возвращает неправильное значение");
 
             #endregion
+            
+            #region проверка RemoveLast
+
+            // var line = Console.ReadLine().Split();
+            // int beforeRemoveLength = line.Length;
+            // var list = new SinglyLinkedList();
+            // foreach (var item in line)
+            // {
+            //     list.PushBack(int.Parse(item));
+            // }
+            // var itemToRemove = int.Parse(Console.ReadLine());
+            // var isRemove = list.RemoveLast(itemToRemove);
+            // Console.WriteLine(list.Print());
+            //
+            // int afterRemoveLength = list.GetCount();
+            //
+            // if (beforeRemoveLength == afterRemoveLength && isRemove)
+            //     throw new Exception("Метод \"RemoveLast\" возвращает неправильное значение");
+            //
+            // if (beforeRemoveLength != afterRemoveLength && !isRemove)
+            //     throw new Exception("Метод \"RemoveLast\" возвращает неправильное значение");
+
+            #endregion
             #region проверка RemoveLast
 
             var line = Console.ReadLine().Split();
@@ -141,16 +164,13 @@ namespace SinglyLinkedList
                 list.PushBack(int.Parse(item));
             }
             var itemToRemove = int.Parse(Console.ReadLine());
-            var isRemove = list.RemoveLast(itemToRemove);
+            var remodedElementsCounts = list.RemoveAll(itemToRemove);
             Console.WriteLine(list.Print());
 
             int afterRemoveLength = list.GetCount();
 
-            if (beforeRemoveLength == afterRemoveLength && isRemove)
-                throw new Exception("Метод \"RemoveLast\" возвращает неправильное значение");
-
-            if (beforeRemoveLength != afterRemoveLength && !isRemove)
-                throw new Exception("Метод \"RemoveLast\" возвращает неправильное значение");
+            if (beforeRemoveLength != afterRemoveLength + remodedElementsCounts)
+                throw new Exception("Метод \"RemoveAll\" возвращает неправильное значение");
 
             #endregion
             

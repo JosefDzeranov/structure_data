@@ -240,7 +240,7 @@ namespace SinglyLinkedList
 
             return false;
         }
-        
+
         public bool RemoveLast(int item)
         {
             var node = FindLast(item);
@@ -249,7 +249,22 @@ namespace SinglyLinkedList
                 RemoveNode(node);
                 return true;
             }
+
             return false;
+        }
+
+        public int RemoveAll(int item)
+        {
+            int removedItemsCount = 0;
+            Node node = Find(item);
+            while (node != null)
+            {
+                RemoveNode(node);
+                node = Find(item);
+                removedItemsCount++;
+            }
+
+            return removedItemsCount;
         }
     }
 }
