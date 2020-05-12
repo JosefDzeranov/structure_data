@@ -228,5 +228,28 @@ namespace SinglyLinkedList
 
             current.Next = newNode;
         }
+
+        public bool Remove(int item)
+        {
+            var node = Find(item);
+            if (node != null)
+            {
+                RemoveNode(node);
+                return true;
+            }
+
+            return false;
+        }
+        
+        public bool RemoveLast(int item)
+        {
+            var node = FindLast(item);
+            if (node != null)
+            {
+                RemoveNode(node);
+                return true;
+            }
+            return false;
+        }
     }
 }

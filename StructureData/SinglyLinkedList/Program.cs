@@ -108,37 +108,52 @@ namespace SinglyLinkedList
             // Console.WriteLine(list.Print());
 
             #endregion
-
-            SinglyLinkedList singlyLinkedList = new SinglyLinkedList();
-
-            singlyLinkedList.PushBack(6);
-            singlyLinkedList.PushBack(7);
-            singlyLinkedList.PushFront(4);
-            singlyLinkedList.PushFront(3);
-            Console.WriteLine(singlyLinkedList.Print()); // выводит "3 4 6 7"
-
-
-            singlyLinkedList.RemoveFirst();
-            Console.WriteLine(singlyLinkedList.Print()); // выводит "4 6 7"
-
-
-            singlyLinkedList.RemoveLast();
-            Console.WriteLine(singlyLinkedList.Print()); // выводит "4 6"
             
-            singlyLinkedList.PushBack(10);
-            Console.WriteLine(singlyLinkedList.Print()); // выводит "4 6 10"
+            #region проверка Remove
 
-            Node node = singlyLinkedList.Find(6); // нашли узел со значением 6
-            singlyLinkedList.RemoveNode(node); // удаляем данный узел
-            Console.WriteLine(singlyLinkedList.Print()); // выводит "4 10"
+            // var line = Console.ReadLine().Split();
+            // int beforeRemoveLength = line.Length;
+            // var list = new SinglyLinkedList();
+            // foreach (var item in line)
+            // {
+            //     list.PushBack(int.Parse(item));
+            // }
+            // var itemToRemove = int.Parse(Console.ReadLine());
+            // var isRemove = list.Remove(itemToRemove);
+            // Console.WriteLine(list.Print());
+            //
+            // int afterRemoveLength = list.GetCount();
+            //
+            // if (beforeRemoveLength == afterRemoveLength && isRemove)
+            //     throw new Exception("Метод \"Remove\" возвращает неправильное значение");
+            //
+            // if (beforeRemoveLength != afterRemoveLength && !isRemove)
+            //     throw new Exception("Метод \"Remove\" возвращает неправильное значение");
+
+            #endregion
+            #region проверка RemoveLast
+
+            var line = Console.ReadLine().Split();
+            int beforeRemoveLength = line.Length;
+            var list = new SinglyLinkedList();
+            foreach (var item in line)
+            {
+                list.PushBack(int.Parse(item));
+            }
+            var itemToRemove = int.Parse(Console.ReadLine());
+            var isRemove = list.RemoveLast(itemToRemove);
+            Console.WriteLine(list.Print());
+
+            int afterRemoveLength = list.GetCount();
+
+            if (beforeRemoveLength == afterRemoveLength && isRemove)
+                throw new Exception("Метод \"RemoveLast\" возвращает неправильное значение");
+
+            if (beforeRemoveLength != afterRemoveLength && !isRemove)
+                throw new Exception("Метод \"RemoveLast\" возвращает неправильное значение");
+
+            #endregion
             
-            node = singlyLinkedList.Find(4); // нашли узел со значением 4
-            singlyLinkedList.RemoveNode(node); // удаляем данный узел
-            Console.WriteLine(singlyLinkedList.Print()); // выводит "10"
-            
-            node = singlyLinkedList.Find(10); // нашли узел со значением 4
-            singlyLinkedList.RemoveNode(node); // удаляем данный узел
-            Console.WriteLine(singlyLinkedList.Print()); // выводит пустую строку
         }
     }
 }
