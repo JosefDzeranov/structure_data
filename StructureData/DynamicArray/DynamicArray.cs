@@ -13,6 +13,11 @@ namespace DynamicArray
             items = new int[length];
         }
 
+        public DynamicArray()
+        {
+            items = new int[0];
+        }
+
         public string Print()
         {
             string result = "";
@@ -134,6 +139,18 @@ namespace DynamicArray
             }
 
             size--;
+        }
+        
+        // добавленные методы
+        public bool Remove(int item)
+        {
+            for (int i = 0; i < items.Length; i++) {
+                if (items[i] == item) {
+                    RemoveByIndex(i);
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }
