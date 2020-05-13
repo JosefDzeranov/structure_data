@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SinglyLinkedList", "SinglyL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicArray", "DynamicArray\DynamicArray.csproj", "{1959AF56-D293-4747-BD62-46B1A6D045F7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SinglyLinkedListWithTail", "SinglyLinkedListWithTail\SinglyLinkedListWithTail.csproj", "{844D3A6C-67CA-49A8-BD2C-0C2D34E1ED62}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{1959AF56-D293-4747-BD62-46B1A6D045F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1959AF56-D293-4747-BD62-46B1A6D045F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1959AF56-D293-4747-BD62-46B1A6D045F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{844D3A6C-67CA-49A8-BD2C-0C2D34E1ED62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{844D3A6C-67CA-49A8-BD2C-0C2D34E1ED62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{844D3A6C-67CA-49A8-BD2C-0C2D34E1ED62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{844D3A6C-67CA-49A8-BD2C-0C2D34E1ED62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
