@@ -6,4 +6,8 @@
         <RootNamespace>SinglyCircularLinkedLis</RootNamespace>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\SinglyLinkedList\SinglyLinkedList.csproj" />
+    </ItemGroup>
+
 </Project>
