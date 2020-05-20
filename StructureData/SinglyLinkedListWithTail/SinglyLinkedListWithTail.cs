@@ -97,7 +97,16 @@ namespace SinglyLinkedListWithTail
                 throw new Exception("Список пуст");
             }
 
-            Head = Head.Next;
+            if (count == 1)
+            {
+                Head = null;
+                Tail = null;
+            }
+            else
+            {
+                Head = Head.Next;
+            }
+
             count--;
         }
 

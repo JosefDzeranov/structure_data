@@ -1,4 +1,5 @@
 ﻿using System;
+using SinglyLinkedList;
 
 namespace SinglyLinkedListWithTail
 {
@@ -6,12 +7,17 @@ namespace SinglyLinkedListWithTail
     {
         static void Main(string[] args)
         {
-            var list = new SinglyLinkedListWithTail();
-            list.PushBack(5);
-            list.PushBack(6);
-            list.PushBack(7);
-            list.PushBack(8);
-            Console.WriteLine(list.Print());
+            SinglyLinkedListWithTail list = new SinglyLinkedListWithTail();
+            list.PushBack(1);
+            list.RemoveFirst(); // удаляем элемент
+
+            list.PushBack(1);
+            list.RemoveLast(); // отработает правильно по приведенному в лекции коду
+            var tail = list.Tail; // возвращает элемент, чего быть не должно
+
+            list.PushBack(1);
+            Node one = list.Find(1);
+            list.RemoveNode(one); // отработает правильно по приведенному в лекции коду
         }
     }
 }
