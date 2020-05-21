@@ -139,9 +139,9 @@ namespace SinglyLinkedListWithTail
 
         public void RemoveNode(Node node)
         {
-            if (Head == node)
+            if (node == Head)
             {
-                Head = node.Next;
+                RemoveFirst();
             }
             else
             {
@@ -162,9 +162,9 @@ namespace SinglyLinkedListWithTail
                 {
                     Tail = current;
                 }
-            }
 
-            count--;
+                count--;
+            }
         }
 
         // добавленные методы
@@ -173,6 +173,7 @@ namespace SinglyLinkedListWithTail
             if (index < 0 || index >= count)
                 return null;
             int cur = 0;
+
             Node node = Head;
             while (cur != index)
             {
@@ -186,6 +187,7 @@ namespace SinglyLinkedListWithTail
         public Node FindLast(int key)
         {
             Node node = Head;
+
             Node result = null;
             while (node != null)
             {
@@ -214,7 +216,6 @@ namespace SinglyLinkedListWithTail
             count++;
             Node newNode = new Node(item);
             newNode.Next = node;
-
             if (node == Head)
             {
                 Head = newNode;
@@ -262,6 +263,7 @@ namespace SinglyLinkedListWithTail
         public int RemoveAll(int item)
         {
             int removedItemsCount = 0;
+
             Node node = Find(item);
             while (node != null)
             {
