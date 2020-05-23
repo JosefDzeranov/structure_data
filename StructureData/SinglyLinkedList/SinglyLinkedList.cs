@@ -205,28 +205,24 @@ namespace SinglyLinkedList
 
         public void AddBefore(Node node, int item)
         {
-            count++;
-            Node newNode = new Node(item);
-            newNode.Next = node;
-
-            if (node == Head)
+            if (node == null)
             {
-                Head = newNode;
                 return;
             }
-
-            Node current = Head;
-            while (current.Next.Next != null)
+            if (Head == node)
             {
-                if (current.Next == node)
+                PushFront(item);
+            }
+            else
+            {
+                Node current = Head;
+                while (current.Next != node)
                 {
-                    break;
+                    current = current.Next;
                 }
 
-                current = current.Next;
+                AddAfter(current, item);
             }
-
-            current.Next = newNode;
         }
 
         public bool Remove(int item)

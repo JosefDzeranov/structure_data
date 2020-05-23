@@ -87,28 +87,28 @@ namespace SinglyLinkedList
 
             #region проверка AddBefore
 
-            // var line = Console.ReadLine().Split();
-            // var list = new SinglyLinkedList();
-            // for (int i = 0; i < line.Length; i++)
-            // {
-            //     list.PushBack(int.Parse(line[i]));
-            // }
-            // int expectedLength = line.Length + 1;
-            //
-            // int key = int.Parse(Console.ReadLine());
-            // var node = list.Find(key);
-            //
-            // int item = int.Parse(Console.ReadLine());
-            //
-            // list.AddBefore(node, item);
-            //
-            // if (list.GetCount() != expectedLength)
-            //     throw new Exception("Кол-во элементво в списке после добавления должна быть на 1 больше, чем до добавления.");
-            //
-            // Console.WriteLine(list.Print());
+            var line = Console.ReadLine().Split();
+            var list = new SinglyLinkedList();
+            for (int i = 0; i < line.Length; i++)
+            {
+                list.PushBack(int.Parse(line[i]));
+            }
 
+            int expectedLength = line.Length + 1;
+
+            int key = int.Parse(Console.ReadLine());
+            var node = list.Find(key);
+
+            int item = int.Parse(Console.ReadLine());
+            list.AddBefore(node, item);
+
+            if (list.GetCount() != expectedLength)
+                throw new Exception(
+                    "Кол-во элементво в списке после добавления должна быть на 1 больше, чем до добавления.");
+
+            Console.WriteLine(list.Print());
             #endregion
-            
+
             #region проверка Remove
 
             // var line = Console.ReadLine().Split();
@@ -131,7 +131,7 @@ namespace SinglyLinkedList
             //     throw new Exception("Метод \"Remove\" возвращает неправильное значение");
 
             #endregion
-            
+
             #region проверка RemoveLast
 
             // var line = Console.ReadLine().Split();
@@ -154,26 +154,26 @@ namespace SinglyLinkedList
             //     throw new Exception("Метод \"RemoveLast\" возвращает неправильное значение");
 
             #endregion
+
             #region проверка RemoveLast
 
-            var line = Console.ReadLine().Split();
-            int beforeRemoveLength = line.Length;
-            var list = new SinglyLinkedList();
-            foreach (var item in line)
-            {
-                list.PushBack(int.Parse(item));
-            }
-            var itemToRemove = int.Parse(Console.ReadLine());
-            var remodedElementsCounts = list.RemoveAll(itemToRemove);
-            Console.WriteLine(list.Print());
-
-            int afterRemoveLength = list.GetCount();
-
-            if (beforeRemoveLength != afterRemoveLength + remodedElementsCounts)
-                throw new Exception("Метод \"RemoveAll\" возвращает неправильное значение");
+            // var line = Console.ReadLine().Split();
+            // int beforeRemoveLength = line.Length;
+            // var list = new SinglyLinkedList();
+            // foreach (var item in line)
+            // {
+            //     list.PushBack(int.Parse(item));
+            // }
+            // var itemToRemove = int.Parse(Console.ReadLine());
+            // var remodedElementsCounts = list.RemoveAll(itemToRemove);
+            // Console.WriteLine(list.Print());
+            //
+            // int afterRemoveLength = list.GetCount();
+            //
+            // if (beforeRemoveLength != afterRemoveLength + remodedElementsCounts)
+            //     throw new Exception("Метод \"RemoveAll\" возвращает неправильное значение");
 
             #endregion
-            
         }
     }
 }
