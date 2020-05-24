@@ -120,7 +120,56 @@ namespace DoubleLinkedList
             }
 
             Head = Head.Next;
-            Head.Previous = null;
+            if (Head != null)
+            {
+                Head.Previous = null;
+            }
+
+            count--;
+        }
+
+        public void RemoveLast()
+        {
+            if (count == 0)
+            {
+                throw new Exception("Список пуст");
+            }
+
+            if (count == 1)
+            {
+                Head = null;
+            }
+            else
+            {
+                Node current = Head;
+                while (current.Next.Next != null)
+                {
+                    current = current.Next;
+                }
+
+                current.Next = null;
+            }
+
+            count--;
+        }
+
+        public void RemoveNode(Node node)
+        {
+            if (Head == node)
+            {
+                RemoveFirst();
+                return;
+            }
+
+            Node prev = node.Previous;
+
+            prev.Next = node.Next;
+
+            if (node.Next != null)
+            {
+                node.Next.Previous = prev;
+            }
+
             count--;
         }
     }
