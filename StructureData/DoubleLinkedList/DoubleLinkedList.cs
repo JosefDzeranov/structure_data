@@ -194,7 +194,17 @@ namespace DoubleLinkedList
 
         public void AddAfter(Node node, int item)
         {
-            // реализуйте данный метод
+            if (node.Next == null)
+            {
+                Node newNode = new Node(item);
+                node.Next = newNode;
+                newNode.Previous = node;
+                count++;
+            }
+            else
+            {
+                AddBefore(node.Next, item);
+            }
         }
     }
 }

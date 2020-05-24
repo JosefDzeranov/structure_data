@@ -70,6 +70,31 @@ namespace DoubleLinkedList
             //     throw new Exception("Метод \"FindLast\" изменяет элементы массива");
 
             #endregion
+
+            #region AddAfter
+
+            // var line = Console.ReadLine().Split();
+            // var list = new DoubleLinkedList();
+            // for (int i = 0; i < line.Length; i++)
+            // {
+            //     list.PushBack(int.Parse(line[i]));
+            // }
+            //
+            // int expectedLength = line.Length + 1;
+            //
+            // int key = int.Parse(Console.ReadLine());
+            // var node = list.Find(key);
+            //
+            // int item = int.Parse(Console.ReadLine());
+            // list.AddAfter(node, item);
+            //
+            // if (list.GetCount() != expectedLength && node != null)
+            //     throw new Exception(
+            //         "Кол-во элементво в списке после добавления должна быть на 1 больше, чем до добавления.");
+            //
+            // Console.WriteLine(list.Print());
+
+            #endregion
         }
     }
 }
