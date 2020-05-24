@@ -191,7 +191,6 @@ namespace DoubleLinkedList
             return result;
         }
 
-
         public void AddAfter(Node node, int item)
         {
             if (node.Next == null)
@@ -205,6 +204,18 @@ namespace DoubleLinkedList
             {
                 AddBefore(node.Next, item);
             }
+        }
+
+        public bool Remove(int item)
+        {
+            var node = Find(item);
+            if (node != null)
+            {
+                RemoveNode(node);
+                return true;
+            }
+
+            return false;
         }
     }
 }
