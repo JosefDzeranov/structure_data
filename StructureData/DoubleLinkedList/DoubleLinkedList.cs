@@ -217,5 +217,17 @@ namespace DoubleLinkedList
 
             return false;
         }
+
+        public bool RemoveLast(int item)
+        {
+            var node = FindLast(item);
+            if (node != null)
+            {
+                RemoveNode(node);
+                return true;
+            }
+
+            return false;
+        }
     }
 }

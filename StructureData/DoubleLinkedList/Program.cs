@@ -119,6 +119,30 @@ namespace DoubleLinkedList
             //     throw new Exception("Метод \"Remove\" возвращает неправильное значение");
 
             #endregion
+
+            #region RemoveLast
+
+            // var line = Console.ReadLine().Split();
+            // int beforeRemoveLength = line.Length;
+            // var list = new DoubleLinkedList();
+            // foreach (var item in line)
+            // {
+            //     list.PushBack(int.Parse(item));
+            // }
+            //
+            // var itemToRemove = int.Parse(Console.ReadLine());
+            // var isRemove = list.RemoveLast(itemToRemove);
+            // Console.WriteLine(list.Print());
+            //
+            // int afterRemoveLength = list.GetCount();
+            //
+            // if (beforeRemoveLength == afterRemoveLength && isRemove)
+            //     throw new Exception("Метод \"RemoveLast\" возвращает неправильное значение");
+            //
+            // if (beforeRemoveLength != afterRemoveLength && !isRemove)
+            //     throw new Exception("Метод \"RemoveLast\" возвращает неправильное значение");
+
+            #endregion
         }
     }
 }
