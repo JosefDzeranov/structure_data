@@ -172,5 +172,29 @@ namespace DoubleLinkedList
 
             count--;
         }
+
+        // для реализации
+        public Node FindLast(int key)
+        {
+            Node node = Head;
+            Node result = null;
+            while (node != null)
+            {
+                if (node.Value == key)
+                {
+                    result = node;
+                }
+
+                node = node.Next;
+            }
+
+            return result;
+        }
+
+
+        public void AddAfter(Node node, int item)
+        {
+            // реализуйте данный метод
+        }
     }
 }
