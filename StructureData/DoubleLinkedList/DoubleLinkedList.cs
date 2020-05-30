@@ -229,5 +229,41 @@ namespace DoubleLinkedList
 
             return false;
         }
+
+        public void Group()
+        {
+            if (Head == null)
+                return;
+            Node odd = Head, even = Head.Next, evenHead = even;
+            while (even != null && even.Next != null)
+            {
+                odd.Next = even.Next;
+                odd.Next.Previous = odd;
+                odd = odd.Next;
+                even.Next = odd.Next;
+
+                if (even.Next != null)
+                    even.Next.Previous = even;
+
+                even = even.Next;
+            }
+
+            odd.Next = evenHead;
+            if (evenHead != null)
+                evenHead.Previous = odd;
+        }
+
+        public string PrintReverse()
+        {
+            var result = "";
+            var current = FindTail();
+            while (current != null)
+            {
+                result += current.Value + " ";
+                current = current.Previous;
+            }
+
+            return result;
+        }
     }
 }

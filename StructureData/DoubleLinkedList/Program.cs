@@ -143,6 +143,35 @@ namespace DoubleLinkedList
             //     throw new Exception("Метод \"RemoveLast\" возвращает неправильное значение");
 
             #endregion
+
+            #region Group
+
+            var readLine = Console.ReadLine();
+            var line = readLine.Split(new[] {' '}, StringSplitOptions.RemoveEmptyEntries);
+            int beforeRemoveLength = line.Length;
+            var list = new DoubleLinkedList();
+            foreach (var item in line)
+            {
+                list.PushBack(int.Parse(item));
+            }
+
+            list.Group();
+            Console.WriteLine(list.Print());
+
+            int afterRemoveLength = list.GetCount();
+
+            if (beforeRemoveLength != afterRemoveLength)
+                throw new Exception("Метод \"Group\" возвращает неправильное значение");
+
+            if (beforeRemoveLength != afterRemoveLength)
+                throw new Exception("Метод \"Group\" возвращает неправильное значение");
+
+            var reverseExpected = Console.ReadLine();
+            var reverseActual = list.PrintReverse();
+            if (reverseExpected?.Trim() != reverseActual.Trim())
+                throw new Exception("Метод \"Group\" не проставляет обратные ссылки Previous");
+
+            #endregion
         }
     }
 }

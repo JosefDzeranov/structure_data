@@ -24,15 +24,6 @@ namespace DoubleCircularLinkedList
                 // Добавляем в список
                 list.AddLast(number);
             }
-
-            int result = 0;
-            int count = list.Count - 1;
-            foreach (var node in list)
-            {
-                result += (int) Math.Pow(2, count--) * node;
-            }
-
-            Console.WriteLine(result);
         }
     }
 }
