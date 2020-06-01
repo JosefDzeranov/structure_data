@@ -94,6 +94,11 @@ namespace DoubleLinkedList
 
         public void AddBefore(Node node, int item)
         {
+            if (node == null)
+            {
+                return;
+            }
+
             if (node == Head)
             {
                 PushFront(item);
