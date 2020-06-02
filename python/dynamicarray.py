@@ -63,35 +63,83 @@ class DynamicArray:
     def push_front(self, item):
         self.insert(0, item)
 
+    def pop_back(self):
+        if self.__size == 0:
+            raise Exception("Массив пустой.")
+        self.__size -= 1
+
+    def remove_by_index(self, index):
+        if self.__size == 0:
+            raise Exception("Массив пустой!")
+
+        if index < 0 or index >= self.__size:
+            raise Exception("Выход за пределами массива")
+
+        for i in range(index + 1, self.__size):
+            self.__items[i - 1] = self.__items[i]
+
+        self.__size -= 1
+
+    def pop_front(self):
+        self.remove_by_index(0)
+
 
 array = DynamicArray(6)
+array.push_back(3)  # добавить в конец 10
+array.push_back(1)  # добавить в конец 10
+array.push_back(7)  # добавить в конец 10
 array.push_back(10)  # добавить в конец 10
 array.push_back(5)  # добавить в конец 5
-print(array.print())  # выводит "10 5"
+array.push_back(6)  # добавить в конец 5
+print(array.print())
 
-array.push_front(1)  # добавить в начало 1
-array.push_front(3)  # добавить в начало 3
-print(array.print())  # выводит "3 1 10 5"
-
-array.insert(2, 7)  # добавить 7 в элемент под индексом 2
+array.pop_back()  # Удалить последний элемент
 print(array.print())  # выводит "3 1 7 10 5"
+print(array.get_count())  # выводит 5
 
-item = array.get(3)  # взять элемент под индексом 3
-print(item)  # выводит 10
+array.pop_front()  # Удалить первый элемент
+print(array.print())  # выводит "1 7 10 5"
+print(array.get_count())  # выводит 4
 
-index = array.find(7)  # Получить индекс элемента, равный 7
-print(index)  # выводит 2
+array.remove_by_index(1)  # Удалить элемент под индексом 1
+print(array.print())  # выводит "1 10 5"
+print(array.get_count())  # выводит 3
 
-index = array.find(8)  # Получить индекс элемента, равный 8
-print(index)  # выводит -1
+array.pop_back()  # Удалить последний элемент. Массив состоит из 2 элемента
+array.pop_back()  # Удалить последний элемент. Массив состоит из 1 элемента
+array.pop_back()  # Удалить последний элемент. Массив пустой.
+print(array.get_count())  # выводит 0
+array.pop_back()  # Удалить последний элемент. Будет ошибка
 
-count = array.get_count()  # Получить количество элементов
-print(count)  # выводит 5
-
-# Заполняем массив
-array.push_back(6)
-array.push_back(7)  # НЕ будет ошибки. Массив динамический
-print(array.print())  # выводит "3 1 7 10 5 6 7"
+# 2 урок
+# array = DynamicArray(6)
+# array.push_back(10)  # добавить в конец 10
+# array.push_back(5)  # добавить в конец 5
+# print(array.print())  # выводит "10 5"
+#
+# array.push_front(1)  # добавить в начало 1
+# array.push_front(3)  # добавить в начало 3
+# print(array.print())  # выводит "3 1 10 5"
+#
+# array.insert(2, 7)  # добавить 7 в элемент под индексом 2
+# print(array.print())  # выводит "3 1 7 10 5"
+#
+# item = array.get(3)  # взять элемент под индексом 3
+# print(item)  # выводит 10
+#
+# index = array.find(7)  # Получить индекс элемента, равный 7
+# print(index)  # выводит 2
+#
+# index = array.find(8)  # Получить индекс элемента, равный 8
+# print(index)  # выводит -1
+#
+# count = array.get_count()  # Получить количество элементов
+# print(count)  # выводит 5
+#
+# # Заполняем массив
+# array.push_back(6)
+# array.push_back(7)  # НЕ будет ошибки. Массив динамический
+# print(array.print())  # выводит "3 1 7 10 5 6 7"
 
 # первый урок
 # array = DynamicArray(6)
