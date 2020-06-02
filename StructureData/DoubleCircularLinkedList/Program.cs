@@ -7,23 +7,22 @@ namespace DoubleCircularLinkedList
     {
         static void Main(string[] args)
         {
-            // Считываем количество элементов
-            int n = Convert.ToInt32(Console.ReadLine());
+            DoubleCircularLinkedList firstList = new DoubleCircularLinkedList();
+            DoubleCircularLinkedList secondList = new DoubleCircularLinkedList();
+            
+            firstList.PushBack(10);
+            firstList.PushBack(20);
+            firstList.PushBack(30);
+            secondList.PushBack(123);
+            
+            Console.WriteLine(firstList.Print(true)); // вывод 10 20 30
+            Console.WriteLine(secondList.Print(true)); // вывод 123
 
-            // Считываем сами числа
-            string[] values = Console.ReadLine().Split();
-
-            // Заводим связный список
-            LinkedList<int> list = new LinkedList<int>();
-
-            for (int i = 0; i < n; i++)
-            {
-                // Получаем очередное число
-                int number = Convert.ToInt32(values[i]);
-
-                // Добавляем в список
-                list.AddLast(number);
-            }
+            var found = secondList.Find(123);
+            firstList.RemoveNode(found);
+            
+            Console.WriteLine(firstList.Print(true)); // вывод <string.Empty>
+            Console.WriteLine(secondList.Print(true)); // вывод 123
         }
     }
 }

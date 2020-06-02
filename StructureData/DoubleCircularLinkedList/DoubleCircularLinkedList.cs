@@ -139,7 +139,7 @@ namespace DoubleCircularLinkedList
                 throw new Exception("Список пуст");
             }
 
-            if (node.Next == node)
+            if (node.Next == node && node == Head)
             {
                 Head = null;
             }
@@ -214,7 +214,7 @@ namespace DoubleCircularLinkedList
 
             return false;
         }
-        
+
         public bool RemoveLast(int item)
         {
             var node = FindLast(item);
