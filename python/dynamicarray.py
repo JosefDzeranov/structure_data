@@ -1,9 +1,5 @@
 class DynamicArray:
-    def __init__(self):
-        self.__items = []
-        self.__size = 0
-
-    def __init__(self, length):
+    def __init__(self, length=0):
         self.__items = [0] * length
         self.__size = 0
 
@@ -83,33 +79,62 @@ class DynamicArray:
     def pop_front(self):
         self.remove_by_index(0)
 
+    # задачи
 
-array = DynamicArray(6)
-array.push_back(3)  # добавить в конец 10
-array.push_back(1)  # добавить в конец 10
-array.push_back(7)  # добавить в конец 10
-array.push_back(10)  # добавить в конец 10
-array.push_back(5)  # добавить в конец 5
-array.push_back(6)  # добавить в конец 5
-print(array.print())
+    def find_last(self, key):
+        for i in range(self.__size - 1, -1, -1):
+            if self.__items[i] == key:
+                return i
 
-array.pop_back()  # Удалить последний элемент
-print(array.print())  # выводит "3 1 7 10 5"
-print(array.get_count())  # выводит 5
+        return -1
 
-array.pop_front()  # Удалить первый элемент
-print(array.print())  # выводит "1 7 10 5"
-print(array.get_count())  # выводит 4
 
-array.remove_by_index(1)  # Удалить элемент под индексом 1
-print(array.print())  # выводит "1 10 5"
-print(array.get_count())  # выводит 3
+# find_last
+line = input().split()
+beforeLength = len(line)
+dynamic_array = DynamicArray()
+for item in line:
+    dynamic_array.push_back(int(item))
 
-array.pop_back()  # Удалить последний элемент. Массив состоит из 2 элемента
-array.pop_back()  # Удалить последний элемент. Массив состоит из 1 элемента
-array.pop_back()  # Удалить последний элемент. Массив пустой.
-print(array.get_count())  # выводит 0
-array.pop_back()  # Удалить последний элемент. Будет ошибка
+beforePrinted = dynamic_array.print()
+
+itemToFind = int(input())
+index = dynamic_array.find_last(itemToFind)
+print(index)
+
+afterRemoveLength = dynamic_array.get_count()
+if beforeLength != afterRemoveLength:
+    raise Exception("Метод \"FindLast\" изменяет кол-во элементов")
+
+afterPrinted = dynamic_array.print()
+if beforePrinted != afterPrinted:
+    raise Exception("Метод \"FindLast\" изменяет элементы массива")
+# array = DynamicArray(6)
+# array.push_back(3)  # добавить в конец 10
+# array.push_back(1)  # добавить в конец 10
+# array.push_back(7)  # добавить в конец 10
+# array.push_back(10)  # добавить в конец 10
+# array.push_back(5)  # добавить в конец 5
+# array.push_back(6)  # добавить в конец 5
+# print(array.print())
+#
+# array.pop_back()  # Удалить последний элемент
+# print(array.print())  # выводит "3 1 7 10 5"
+# print(array.get_count())  # выводит 5
+#
+# array.pop_front()  # Удалить первый элемент
+# print(array.print())  # выводит "1 7 10 5"
+# print(array.get_count())  # выводит 4
+#
+# array.remove_by_index(1)  # Удалить элемент под индексом 1
+# print(array.print())  # выводит "1 10 5"
+# print(array.get_count())  # выводит 3
+#
+# array.pop_back()  # Удалить последний элемент. Массив состоит из 2 элемента
+# array.pop_back()  # Удалить последний элемент. Массив состоит из 1 элемента
+# array.pop_back()  # Удалить последний элемент. Массив пустой.
+# print(array.get_count())  # выводит 0
+# array.pop_back()  # Удалить последний элемент. Будет ошибка
 
 # 2 урок
 # array = DynamicArray(6)
