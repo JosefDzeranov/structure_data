@@ -88,27 +88,50 @@ class DynamicArray:
 
         return -1
 
+    def push_back_range(self, array):
+        for item in array:
+            self.push_back(item)
 
-# find_last
-line = input().split()
-beforeLength = len(line)
-dynamic_array = DynamicArray()
-for item in line:
-    dynamic_array.push_back(int(item))
 
-beforePrinted = dynamic_array.print()
+# push_back_range
+        line = input().split()
+        line2 = input().split()
+        array = []
+        for item in line2:
+            array.append(int(item))
 
-itemToFind = int(input())
-index = dynamic_array.find_last(itemToFind)
-print(index)
+        expected_length = len(line) + len(line2)
+        dynamic_array = DynamicArray()
+        for item in line:
+            dynamic_array.push_back(int(item))
 
-afterRemoveLength = dynamic_array.get_count()
-if beforeLength != afterRemoveLength:
-    raise Exception("Метод \"FindLast\" изменяет кол-во элементов")
+        dynamic_array.push_back_range(array)
 
-afterPrinted = dynamic_array.print()
-if beforePrinted != afterPrinted:
-    raise Exception("Метод \"FindLast\" изменяет элементы массива")
+        if dynamic_array.get_count() != expected_length:
+            raise Exception("Кол-во элементво в массиве должна быть равна сумме длин двух массивов.")
+
+        print(dynamic_array.print())
+
+    # find_last
+# line = input().split()
+# beforeLength = len(line)
+# dynamic_array = DynamicArray()
+# for item in line:
+#     dynamic_array.push_back(int(item))
+#
+# beforePrinted = dynamic_array.print()
+#
+# itemToFind = int(input())
+# index = dynamic_array.find_last(itemToFind)
+# print(index)
+#
+# afterRemoveLength = dynamic_array.get_count()
+# if beforeLength != afterRemoveLength:
+#     raise Exception("Метод \"FindLast\" изменяет кол-во элементов")
+#
+# afterPrinted = dynamic_array.print()
+# if beforePrinted != afterPrinted:
+#     raise Exception("Метод \"FindLast\" изменяет элементы массива")
 # array = DynamicArray(6)
 # array.push_back(3)  # добавить в конец 10
 # array.push_back(1)  # добавить в конец 10
