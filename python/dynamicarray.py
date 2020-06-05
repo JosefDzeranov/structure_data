@@ -105,6 +105,31 @@ class DynamicArray:
         self.remove_by_index(index)
         return True
 
+    def remove_all(self, item):
+        count = 0
+        index = self.find(item)
+        while index >= 0:
+            self.remove_by_index(index)
+            count += 1
+            index = self.find(item)
+        return count
+
+
+line = input().split()
+before_remove_length = len(line)
+dynamic_array = DynamicArray()
+for item in line:
+    dynamic_array.push_back(int(item))
+
+item_to_remove = int(input())
+
+removed_elements_counts = dynamic_array.remove_all(item_to_remove)
+print(dynamic_array.print())
+
+after_remove_length = dynamic_array.get_count()
+
+if before_remove_length != after_remove_length + removed_elements_counts:
+    raise Exception("Метод \"RemoveAll\" возвращает неправильное значение")
 
 # remove
 line = input().split()
