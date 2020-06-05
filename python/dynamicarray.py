@@ -97,48 +97,78 @@ class DynamicArray:
             self.insert(index, i)
             index += 1
 
+    def remove(self, item):
+        index = self.find(item)
+        if index == -1:
+            return False
 
-        line = input().split()
-        line2 = input().split()
-        array = []
-        for item in line2:
-            array.append(int(item))
-
-        index = int(input())
-        expected_length = len(line) + len(line2)
-
-        dynamic_array = DynamicArray()
-        for item in line:
-            dynamic_array.push_back(int(item))
-
-        dynamic_array.insert_range(index, array)
-
-        if dynamic_array.get_count() != expected_length:
-            raise Exception("Кол-во элементов в массиве должна быть равна сумме длин двух массивов.")
-
-        print(dynamic_array.print())
-
-        # line = input().split()
-        # line2 = input().split()
-        # array = []
-        # for item in line2:
-        #     array.append(int(item))
-        #
-        # expected_length = len(line) + len(line2)
-        # dynamic_array = DynamicArray()
-        # for item in line:
-        #     dynamic_array.push_back(int(item))
-        #
-        # dynamic_array.push_back_range(array)
-        #
-        # if dynamic_array.get_count() != expected_length:
-        #     raise Exception("Кол-во элементво в массиве должна быть равна сумме длин двух массивов.")
-        #
-        # print(dynamic_array.print())
-        # push_back_range
+        self.remove_by_index(index)
+        return True
 
 
-    # find_last
+# remove
+line = input().split()
+before_remove_length = len(line)
+dynamic_array = DynamicArray()
+
+for item in line:
+    dynamic_array.push_back(int(item))
+
+item_to_remove = int(input())
+
+is_remove = dynamic_array.remove(item_to_remove)
+print(dynamic_array.print())
+
+after_remove_length = dynamic_array.get_count()
+
+if before_remove_length == after_remove_length and is_remove:
+    raise Exception("Метод \"Remove\" возвращает неправильное значение")
+
+if before_remove_length != after_remove_length and not is_remove:
+    raise Exception("Метод \"Remove\" возвращает неправильное значение")
+
+# insert_range
+# line = input().split()
+# line2 = input().split()
+# array = []
+# for item in line2:
+#     array.append(int(item))
+#
+# index = int(input())
+# expected_length = len(line) + len(line2)
+#
+# dynamic_array = DynamicArray()
+# for item in line:
+#     dynamic_array.push_back(int(item))
+#
+# dynamic_array.insert_range(index, array)
+#
+# if dynamic_array.get_count() != expected_length:
+#     raise Exception("Кол-во элементов в массиве должна быть равна сумме длин двух массивов.")
+#
+# print(dynamic_array.print())
+
+# line = input().split()
+# line2 = input().split()
+# array = []
+# for item in line2:
+#     array.append(int(item))
+#
+# expected_length = len(line) + len(line2)
+# dynamic_array = DynamicArray()
+# for item in line:
+#     dynamic_array.push_back(int(item))
+#
+# dynamic_array.push_back_range(array)
+#
+# if dynamic_array.get_count() != expected_length:
+#     raise Exception("Кол-во элементво в массиве должна быть равна сумме длин двух массивов.")
+#
+# print(dynamic_array.print())
+# push_back_range
+
+
+# find_last
 # line = input().split()
 # beforeLength = len(line)
 # dynamic_array = DynamicArray()
