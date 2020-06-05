@@ -209,6 +209,7 @@ namespace SinglyLinkedList
             {
                 return;
             }
+
             if (Head == node)
             {
                 PushFront(item);
@@ -261,6 +262,21 @@ namespace SinglyLinkedList
             }
 
             return removedItemsCount;
+        }
+
+        public void Reverse()
+        {
+            Node previous = null;
+            Node current = Head;
+            while (current != null)
+            {
+                Node nextTemp = current.Next;
+                current.Next = previous;
+                previous = current;
+                current = nextTemp;
+            }
+
+            Head = previous;
         }
     }
 }

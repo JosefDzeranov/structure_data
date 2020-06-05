@@ -87,26 +87,26 @@ namespace SinglyLinkedList
 
             #region проверка AddBefore
 
-            var line = Console.ReadLine().Split();
-            var list = new SinglyLinkedList();
-            for (int i = 0; i < line.Length; i++)
-            {
-                list.PushBack(int.Parse(line[i]));
-            }
-
-            int expectedLength = line.Length + 1;
-
-            int key = int.Parse(Console.ReadLine());
-            var node = list.Find(key);
-
-            int item = int.Parse(Console.ReadLine());
-            list.AddBefore(node, item);
-
-            if (list.GetCount() != expectedLength)
-                throw new Exception(
-                    "Кол-во элементво в списке после добавления должна быть на 1 больше, чем до добавления.");
-
-            Console.WriteLine(list.Print());
+            // var line = Console.ReadLine().Split();
+            // var list = new SinglyLinkedList();
+            // for (int i = 0; i < line.Length; i++)
+            // {
+            //     list.PushBack(int.Parse(line[i]));
+            // }
+            //
+            // int expectedLength = line.Length + 1;
+            //
+            // int key = int.Parse(Console.ReadLine());
+            // var node = list.Find(key);
+            //
+            // int item = int.Parse(Console.ReadLine());
+            // list.AddBefore(node, item);
+            //
+            // if (list.GetCount() != expectedLength)
+            //     throw new Exception(
+            //         "Кол-во элементво в списке после добавления должна быть на 1 больше, чем до добавления.");
+            //
+            // Console.WriteLine(list.Print());
             #endregion
 
             #region проверка Remove
@@ -172,6 +172,28 @@ namespace SinglyLinkedList
             //
             // if (beforeRemoveLength != afterRemoveLength + remodedElementsCounts)
             //     throw new Exception("Метод \"RemoveAll\" возвращает неправильное значение");
+
+            #endregion
+
+            #region Reverse
+
+            var line = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            int beforeReverseLength = line.Length;
+            var list = new SinglyLinkedList();
+            foreach (var item in line)
+            {
+                list.PushBack(int.Parse(item));
+            }
+            
+            list.Reverse();
+            
+            Console.WriteLine(list.Print());
+
+            int afterReverseLength = list.GetCount();
+
+            if (beforeReverseLength != afterReverseLength)
+                throw new Exception("Метод \"Reverse\" изменяет количество элементов в списке");
+
 
             #endregion
         }
