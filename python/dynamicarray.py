@@ -92,25 +92,51 @@ class DynamicArray:
         for item in array:
             self.push_back(item)
 
+    def insert_range(self, index, array):
+        for i in array:
+            self.insert(index, i)
+            index += 1
 
-# push_back_range
+
         line = input().split()
         line2 = input().split()
         array = []
         for item in line2:
             array.append(int(item))
 
+        index = int(input())
         expected_length = len(line) + len(line2)
+
         dynamic_array = DynamicArray()
         for item in line:
             dynamic_array.push_back(int(item))
 
-        dynamic_array.push_back_range(array)
+        dynamic_array.insert_range(index, array)
 
         if dynamic_array.get_count() != expected_length:
-            raise Exception("Кол-во элементво в массиве должна быть равна сумме длин двух массивов.")
+            raise Exception("Кол-во элементов в массиве должна быть равна сумме длин двух массивов.")
 
         print(dynamic_array.print())
+
+        # line = input().split()
+        # line2 = input().split()
+        # array = []
+        # for item in line2:
+        #     array.append(int(item))
+        #
+        # expected_length = len(line) + len(line2)
+        # dynamic_array = DynamicArray()
+        # for item in line:
+        #     dynamic_array.push_back(int(item))
+        #
+        # dynamic_array.push_back_range(array)
+        #
+        # if dynamic_array.get_count() != expected_length:
+        #     raise Exception("Кол-во элементво в массиве должна быть равна сумме длин двух массивов.")
+        #
+        # print(dynamic_array.print())
+        # push_back_range
+
 
     # find_last
 # line = input().split()
