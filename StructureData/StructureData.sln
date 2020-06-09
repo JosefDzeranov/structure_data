@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoubleLinkedList", "DoubleL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoubleCircularLinkedList", "DoubleCircularLinkedList\DoubleCircularLinkedList.csproj", "{FF37B46D-5724-461C-8072-CC4E85C3023D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackOnArray", "StackOnArray\StackOnArray.csproj", "{E772DA71-B4E6-4E3C-A5E2-871078430D00}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,9 @@ Global
 		{FF37B46D-5724-461C-8072-CC4E85C3023D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF37B46D-5724-461C-8072-CC4E85C3023D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF37B46D-5724-461C-8072-CC4E85C3023D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E772DA71-B4E6-4E3C-A5E2-871078430D00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E772DA71-B4E6-4E3C-A5E2-871078430D00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E772DA71-B4E6-4E3C-A5E2-871078430D00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E772DA71-B4E6-4E3C-A5E2-871078430D00}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

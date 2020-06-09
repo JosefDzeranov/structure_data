@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SinglyLinkedList
 {
@@ -177,24 +178,22 @@ namespace SinglyLinkedList
 
             #region Reverse
 
-            var line = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
-            int beforeReverseLength = line.Length;
-            var list = new SinglyLinkedList();
-            foreach (var item in line)
-            {
-                list.PushBack(int.Parse(item));
-            }
-            
-            list.Reverse();
-            
-            Console.WriteLine(list.Print());
-
-            int afterReverseLength = list.GetCount();
-
-            if (beforeReverseLength != afterReverseLength)
-                throw new Exception("Метод \"Reverse\" изменяет количество элементов в списке");
-
-
+            // var line = Console.ReadLine().Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            // int beforeReverseLength = line.Length;
+            // var list = new SinglyLinkedList();
+            // foreach (var item in line)
+            // {
+            //     list.PushBack(int.Parse(item));
+            // }
+            //
+            // list.Reverse();
+            //
+            // Console.WriteLine(list.Print());
+            //
+            // int afterReverseLength = list.GetCount();
+            //
+            // if (beforeReverseLength != afterReverseLength)
+            //     throw new Exception("Метод \"Reverse\" изменяет количество элементов в списке");
             #endregion
         }
     }
