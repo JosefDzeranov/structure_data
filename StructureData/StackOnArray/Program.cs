@@ -13,7 +13,10 @@ namespace StackOnArray
             Console.WriteLine(stack.Print()); // выводит 3 4 6
 
             stack.Clear();
-            Console.WriteLine(stack.GetCount()); // выводит 0
+
+            bool isEmpty = stack.Empty(); // Стек пуст?  
+            Console.WriteLine(isEmpty); // True
+
             Console.WriteLine(stack.Print()); // выводит пустую строку
         }
     }

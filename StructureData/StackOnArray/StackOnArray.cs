@@ -24,9 +24,9 @@ namespace StackOnArray
             return result;
         }
 
-        public int GetCount()
+        public bool Empty()
         {
-            return size;
+            return size == 0;
         }
 
 
