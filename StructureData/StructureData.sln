@@ -16,6 +16,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackOnArray", "StackOnArra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StackOnLinkedList", "StackOnLinkedList\StackOnLinkedList.csproj", "{9636E44D-B049-463B-B347-BA31312803FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueOnArray", "QueueOnArray\QueueOnArray.csproj", "{F90D4366-AF96-40FA-8C59-FF2E660E2993}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueueOnLinkedList", "QueueOnLinkedList\QueueOnLinkedList.csproj", "{C990776A-045D-4E46-99AB-B869D6BEDAFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,5 +58,13 @@ Global
 		{9636E44D-B049-463B-B347-BA31312803FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9636E44D-B049-463B-B347-BA31312803FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9636E44D-B049-463B-B347-BA31312803FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F90D4366-AF96-40FA-8C59-FF2E660E2993}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F90D4366-AF96-40FA-8C59-FF2E660E2993}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F90D4366-AF96-40FA-8C59-FF2E660E2993}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F90D4366-AF96-40FA-8C59-FF2E660E2993}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C990776A-045D-4E46-99AB-B869D6BEDAFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C990776A-045D-4E46-99AB-B869D6BEDAFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C990776A-045D-4E46-99AB-B869D6BEDAFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C990776A-045D-4E46-99AB-B869D6BEDAFB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
