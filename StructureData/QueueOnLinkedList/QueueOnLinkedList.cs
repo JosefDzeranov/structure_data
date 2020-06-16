@@ -37,7 +37,7 @@ namespace QueueOnLinkedList
         {
             if (items.Count == 0)
             {
-                throw new Exception("Стек пустой.");
+                throw new Exception("Очередь пустая.");
             }
 
             int lastItem = items.First.Value;
@@ -49,7 +49,7 @@ namespace QueueOnLinkedList
         {
             if (items.Count == 0)
             {
-                throw new Exception("Стек пустой.");
+                throw new Exception("Очередь пустая.");
             }
 
             return items.First.Value;
