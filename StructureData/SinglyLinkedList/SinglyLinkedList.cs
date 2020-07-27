@@ -92,6 +92,11 @@ namespace SinglyLinkedList
 
         public void AddAfter(Node node, int item)
         {
+            if (node == null)
+            {
+                return;
+            }
+
             Node newNode = new Node(item);
 
             newNode.Next = node.Next;
