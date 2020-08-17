@@ -7,7 +7,6 @@ namespace SetOnArray
     {
         static void Main(string[] args)
         {
-            new HashSet<>()
             var line = Console.ReadLine().Split();
 
             var set = new SetOnArray();
